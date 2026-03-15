@@ -6,7 +6,7 @@
 
 #define BUF_SIZE 4096
 
-// Таблица popcount на 256 значений
+// Таблица popcount для всех 256 возможных байтов
 static uint8_t POPCOUNT_TABLE[256];
 
 // Инициализация таблицы
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     }
 
     const char *filename = argv[1];
-    FILE *f = fopen(filename, "rb");
+    FILE *f = fopen(filename, "rb");  // ВАЖНО: бинарный режим
     if (!f) {
         fprintf(stderr, "Error opening file %s: %s\n",
                 filename, strerror(errno));
