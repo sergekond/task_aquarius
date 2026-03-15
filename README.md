@@ -12,16 +12,21 @@
 ## Тестирование
 ### Через CMake
 Необходимо в ```launch.json``` в поле ```"args"``` указать путь к файлу, в котором необходимо подсчитать количество единичных битов.
-После чего собрать проект, можно в bash ```cd build
+После чего собрать проект, можно в bash 
+```
+cd build
 cmake ..
-cmake --build```
+cmake --build
+```
 
 ### Через bash
 Собрать проект 
-```mkdir build
+```
+mkdir build
 cd build
 cmake ..
-cmake --build```
+cmake --build
+```
 
 Перейти в workspace директорию ```cd ../```
 
