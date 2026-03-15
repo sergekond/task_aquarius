@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     }
 
     const char *filename = argv[1];
-    FILE *f = fopen(filename, "rb");  // ВАЖНО: бинарный режим
+    FILE *f = fopen(filename, "rb");  // бинарный режим
     if (!f) {
         fprintf(stderr, "Error opening file %s: %s\n",
                 filename, strerror(errno));
