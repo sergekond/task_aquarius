@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/user/Desktop/task_aquarius/build",
+  "command": "C:/msys64/ucrt64/bin/gcc.exe   -g -o CMakeFiles/main.c.dir/main.c.obj -c C:/Users/user/Desktop/task_aquarius/main.c",
+  "file": "C:/Users/user/Desktop/task_aquarius/main.c",
+  "output": "CMakeFiles/main.c.dir/main.c.obj"
+}
+]

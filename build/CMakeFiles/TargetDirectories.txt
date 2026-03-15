@@ -1,0 +1,3 @@
+C:/Users/user/Desktop/task_aquarius/build/CMakeFiles/main.c.dir
+C:/Users/user/Desktop/task_aquarius/build/CMakeFiles/edit_cache.dir
+C:/Users/user/Desktop/task_aquarius/build/CMakeFiles/rebuild_cache.dir

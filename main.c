@@ -6,6 +6,22 @@
 
 #define BUF_SIZE 4096
 
+// Таблица popcount на 256 значений
+static uint8_t POPCOUNT_TABLE[256];
+
+// Инициализация таблицы
+static void init_popcount_table(void) {
+    for (int i = 0; i < 256; i++) {
+        uint8_t v = (uint8_t)i;
+        uint8_t count = 0;
+        while (v) {
+            count += v & 1u;
+            v >>= 1;
+        }
+        POPCOUNT_TABLE[i] = count;
+    }
+}
+
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <file>\n", argv[0]);
@@ -20,20 +36,15 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    init_popcount_table();
+
     uint8_t buffer[BUF_SIZE];
     size_t n;
     unsigned long long total = 0;
 
     while ((n = fread(buffer, 1, BUF_SIZE, f)) > 0) {
         for (size_t i = 0; i < n; i++) {
-            uint8_t b = buffer[i];
-
-            // ВРЕМЕННЫЙ НАИВНЫЙ ПОДСЧЁТ (для проверки логики)
-            for (int bit = 0; bit < 8; bit++) {
-                if (b & (1u << bit)) {
-                    total++;
-                }
-            }
+            total += POPCOUNT_TABLE[buffer[i]];
         }
     }
 
